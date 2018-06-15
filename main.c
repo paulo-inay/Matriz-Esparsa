@@ -1,3 +1,5 @@
+//Paulo Inay Cruz - Nro USP: 10388691
+
 #include <stdio.h>
 #include <stdlib.h>
 
