@@ -36,7 +36,7 @@ void Gauss_Seidel(valormatriz *Valores, int linhas, int colunas, int quantidade_
         }
     }
     int intera;
-    printf("De o numero de iteracoes do metodo:\n");
+    printf("\nDe o numero de iteracoes do metodo:\n");
     scanf("%d", &intera);
     fflush(stdin);
     float *chute;
@@ -84,10 +84,10 @@ void Gauss_Seidel(valormatriz *Valores, int linhas, int colunas, int quantidade_
         }
     }
     printf("Resultados:\n");
-    for (contador = 0; contador < linhas; contador++){
+    for (contador = 0; contador < linhas - 1; contador++){
         printf("X[%d]: %.4f, ", contador, chute[contador]);
     }
-    printf(".\n");
+    printf("X[%d]: %.4f.\n", contador, chute[contador]);
     free(chute);
     free(soma);
     free(resultados);
@@ -97,6 +97,7 @@ void Gauss_Seidel(valormatriz *Valores, int linhas, int colunas, int quantidade_
 
 void Atribui_valor(valormatriz *Valores, int linhas, int colunas, int quantidade_de_valores, int quantmax, int add){
     int contador;
+    printf("\n");
     for (contador = 0; contador < add; contador++){
         int flag = 1;
         while(flag){
@@ -149,6 +150,7 @@ void Atribui_valor(valormatriz *Valores, int linhas, int colunas, int quantidade
 
 void Calcula_somalinha(valormatriz *Valores, int linhas, int quantidade_de_valores){
     float soma = 0;
+    printf("\n");
     int alinha;
     while(1){
         printf("De qual linha voce deseja calcular a soma?\n");
@@ -169,6 +171,7 @@ void Calcula_somalinha(valormatriz *Valores, int linhas, int quantidade_de_valor
 
 void Calcula_somacoluna(valormatriz *Valores, int colunas, int quantidade_de_valores){
     float soma = 0;
+    printf("\n");
     int acoluna;
     while(1){
         printf("De qual coluna voce deseja calcular a soma?\n");
@@ -330,6 +333,8 @@ int main()
 
     /* */
 
+    printf("Matriz-Esparsa \n \n \n");
+
     char opcaogeral_user = 0;
     char opcaoinsert_user;
 
@@ -368,7 +373,7 @@ int main()
         }
         if (opcaogeral_user == '1'){
             free(Valores);
-            printf("Insira a quantidade de linhas que a matriz possui:\n");
+            printf("\nInsira a quantidade de linhas que a matriz possui:\n");
             scanf("%d", &linhas);
             fflush(stdin);
 
